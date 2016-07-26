@@ -1,10 +1,18 @@
 <html>
     <head>
-        <title>in summer</title>
+        <title>Django Girls blog</title>
     </head>
     <body>
-        <h1>Just imagine how much cooler I'll be in summer</h1>
-		<br />
-		<a href="https://www.youtube.com/watch?v=UFatVn1hP3o"><strong>put me in summer and I'll be a...happy snowman!</strong></a>
+        <div>
+			<h1><a href="/">Django Girls Blog</a></h1>
+		</div>
+
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
     </body>
 </html>
